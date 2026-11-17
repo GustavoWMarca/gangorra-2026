@@ -4,7 +4,12 @@
   "type": "module",
   "scripts": {
     "estudio": "npx remotion studio src/index.ts",
-    "fotos": "node scripts/bridge-stills.mjs"
+    "fotos": "node scripts/bridge-stills.mjs",
+    "verificar": "node scripts/preflight.mjs",
+    "produzir": "node scripts/produzir.mjs",
+    "novo": "node scripts/novo.mjs",
+    "roteiro": "node scripts/roteiro.mjs",
+    "voz": "node scripts/voz.mjs"
   },
   "dependencies": {
     "@react-three/fiber": "9.8.2",

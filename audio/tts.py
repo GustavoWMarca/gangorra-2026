@@ -1,8 +1,9 @@
-"""Gera voice.mp3 + words.json (tempo por palavra) com edge-tts."""
+﻿"""Gera voice.mp3 + words.json (tempo por palavra) com edge-tts."""
 import asyncio, json, sys
 import edge_tts
 
-TEXT = (
+TEXT = open(sys.argv[3], encoding='utf-8').read().strip() if len(sys.argv) > 3 else (
+
     "Em dois mil e vinte e seis, aconteceu uma coisa inédita no Brasil: quem perdeu o primeiro turno ganhou a eleição. "
     "Quatro de outubro: cento e vinte e cinco milhões de pessoas votaram. "
     "Flávio Bolsonaro sai na frente. Lula fica uns dois pontos atrás. "
@@ -12,7 +13,7 @@ TEXT = (
     "Lula leva cinquenta e um vírgula setenta e nove por cento. Sessenta e quatro milhões de votos, recorde da vida dele. "
     "E dois dias depois, fez oitenta e um anos: o presidente mais velho já eleito no país."
 )
-VOICE = sys.argv[2] if len(sys.argv) > 2 else "pt-BR-AntonioNeural"
+VOICE = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] != "-" else "pt-BR-AntonioNeural"
 OUT = sys.argv[1]
 
 async def main():
