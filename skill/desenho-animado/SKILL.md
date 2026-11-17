@@ -12,7 +12,7 @@ description: 'Faz um short vertical (~15-70 s) em desenho animado "bonecos 2D nu
 2. Siga a seção **"Fluxo rápido"** abaixo: pesquisa e roteiro em `roteiros/<nome>.md` → `npm run novo` →
    `npm run voz` → editar story/cast/world com o kit → `npm run produzir`. O resto deste arquivo é referência.
 3. Padrões deste usuário: render leve 720x1280 (PC sem placa de vídeo); narração com a VOZ DELE (mande
-   `out/<nome>/GRAVAR.md`; voz sintética só provisória); legenda só se pedir (embaixo, 79 % da altura);
+   `out/<nome>/GRAVAR.md`; voz sintética só provisória); legendas animadas: o `produzir` SEMPRE gera as duas versões (`<nome>.mp4` e `<nome>-legendado.mp4`, a camada é cacheada); entregue a legendada quando o usuário pedir legenda (estilo Shorts, embaixo a 79 % da altura, no céu a 12 % nas cenas com rostos embaixo — ajuste `yAt` em `Legendas<Nome>.tsx`);
    verificador com 0 erro antes de renderizar; uma conversa por vídeo.
 
 Exemplos antigos (referência visual, sem o kit):
@@ -26,7 +26,7 @@ As referências são material de estudo.
 - Nunca diga o nome do canal de referência na narração ou na descrição.
 
 Regras padrão (o usuário pode mudar):
-- Sem legenda nem etiqueta dentro do desenho (legenda animada só se pedirem: passo 12).
+- Sem etiqueta dentro do desenho. Legenda animada: sai pronta em `<nome>-legendado.mp4` (passo 12); mande essa versão quando pedirem legenda.
 - Português do Brasil.
 - Voz num tom só, firme e rápida.
 - Piadas são fatos reais pesquisados.

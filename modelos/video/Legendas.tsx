@@ -8,5 +8,7 @@ import { shotAt, FPS } from "./story";
 /** números falados por extenso -> algarismos */
 const REPLACE: [string, string][] = [["dois mil e vinte e seis", "2026"]];
 const GROUPS = groupOf(tokenize(words as Word[], REPLACE));
-const yAt = (t: number) => { const id = shotAt(Math.round(t * FPS)).id; return id === 0 ? 0.12 : 0.79; };
+/** altura por cena: 0,79 = embaixo (padrão); 0,12 = no céu, para as cenas com rostos na parte de baixo (ponha os ids em CEU) */
+const CEU: number[] = [];
+const yAt = (t: number) => (CEU.includes(shotAt(Math.round(t * FPS)).id) ? 0.12 : 0.79);
 export const Legendas__Nome__: React.FC = () => <Legendas groups={GROUPS} yAt={yAt} size={92} />;
