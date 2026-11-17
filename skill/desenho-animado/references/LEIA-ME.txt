@@ -1,0 +1,1 @@
+﻿As pastas frames/ e sheets/ (quadros dos videos de referencia) NAO entram no repositorio: a skill proibe publicar esse material. Os relatorios com os numeros medidos (reports/*.md) e o STYLE_BIBLE.md bastam para o fluxo. Quem tiver a pasta original pode copia-la para ~/.claude/skills/desenho-animado/references/.

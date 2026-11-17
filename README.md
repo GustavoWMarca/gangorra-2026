@@ -7,6 +7,8 @@ Shorts verticais no estilo "bonecos 2D num mundo 3D", com narração, trilha e e
 | A gangorra de 2026 (eleições) | [`out/eleicoes/gangorra-2026.mp4`](out/eleicoes/gangorra-2026.mp4) | [`roteiros/eleicoes.md`](roteiros/eleicoes.md) |
 | O apagão do dia 17 | [`out/apagao/apagao.mp4`](out/apagao/apagao.mp4) · [com legenda](out/apagao/apagao-legendado.mp4) | [`roteiros/apagao.md`](roteiros/apagao.md) |
 
+**Outra máquina:** veja [`INSTALAR.md`](INSTALAR.md) (um script instala tudo, inclusive a skill do Claude Code em `skill/`).
+
 ## Fluxo
 ```
 npm install

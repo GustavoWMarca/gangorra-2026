@@ -26,7 +26,11 @@ const ROOT = process.cwd(), DIR = path.join(ROOT, "src/videos", nome), OUT = pat
 const TMP = path.join(ROOT, "out/tmp");
 fs.mkdirSync(SEG, { recursive: true }); fs.mkdirSync(TMP, { recursive: true });
 process.env.TEMP = process.env.TMP = TMP;
-const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const CHROME = (() => { // Chrome do sistema: CHROME_PATH, ou os lugares de instalação comuns no Windows/Mac/Linux
+  const c = [process.env.CHROME_PATH, "C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    process.env.LOCALAPPDATA && `${process.env.LOCALAPPDATA}/Google/Chrome/Application/chrome.exe`, "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "/usr/bin/google-chrome"];
+  return c.find((p) => p && fs.existsSync(p)) ?? undefined; // undefined: o Remotion baixa o próprio navegador
+})();
 const t0 = Date.now();
 const sec = () => ((Date.now() - t0) / 1000).toFixed(0) + " s";
 const step = (n, s) => console.log(`\n[${n}] ${s}  (${sec()})`);
