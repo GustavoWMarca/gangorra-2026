@@ -1,0 +1,11 @@
+node_modules/
+audio/_cache/
+audio/__pycache__/
+__pycache__/
+*.pyc
+# saídas geradas: só o vídeo final e os arquivos de voz/tempo entram
+out/**
+!out/eleicoes/
+!out/eleicoes/gangorra-2026.mp4
+!out/eleicoes/words.json
+!out/eleicoes/cues.md
